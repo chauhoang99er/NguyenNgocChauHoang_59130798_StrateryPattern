@@ -9,13 +9,21 @@ package BaiTap1;
  *
  * @author Admin
  */
-public class BaiTap1Main {
+public class BaiTap1Main 
+{
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         // TODO code application logic here
+        context ct = new context();
+        ct.setTinhtoan(new Cong());
+        System.out.println("Tổng 75 + 12 = " + ct.tinh(75, 12));
+        
+        ct.setTinhtoan(new Tru());
+        System.out.println("Hiệu 54 - 78 = " + ct.tinh(54, 78));
     }
     
 }
