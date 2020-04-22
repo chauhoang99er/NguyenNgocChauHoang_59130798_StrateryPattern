@@ -17,6 +17,20 @@ public class BaiTap3Main {
     public static void main(String[] args) 
     {
         // TODO code application logic here
+        QLSV qlsv = new QLSV();
+        qlsv.dssv.add(new SinhVien("Nguyễn Ngọc Châu Hoàng", "04/03/1999", 7));
+        qlsv.dssv.add(new SinhVien("Phùng Bá Duy", "06/09/1999", 8));
+        qlsv.dssv.add(new SinhVien("Vũ Ngọc Đoàn", "09/06/1999", 6));
+        
+        System.out.println("=============Sắp Xếp Theo Tên Sinh Viên=============");
+        qlsv.setSoSanh(new SoSanhTheoTen());
+        qlsv.Sapxep();
+        qlsv.inDS();
+        
+        System.out.println("=============Sắp Xếp Theo Điểm TB Sinh Viên=============");
+        qlsv.setSoSanh(new SoSanhTheoDiem());
+        qlsv.Sapxep();
+        qlsv.inDS();
     }
     
 }

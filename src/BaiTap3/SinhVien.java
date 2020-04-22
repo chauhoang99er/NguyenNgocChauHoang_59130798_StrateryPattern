@@ -5,8 +5,6 @@
  */
 package BaiTap3;
 
-import java.util.Date;
-
 /**
  *
  * @author Admin
@@ -14,7 +12,7 @@ import java.util.Date;
 public class SinhVien 
 {
     private String hoTen;
-    private String ngaySinh;
+    private String ngaySinh; //Em chưa tim hiểu cách sử dụng Date
     private float diemTB;
     
     public SinhVien(String hoTen, String ngaySinh, float diemTB)
