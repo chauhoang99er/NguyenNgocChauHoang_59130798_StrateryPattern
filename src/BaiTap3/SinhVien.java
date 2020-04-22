@@ -5,6 +5,10 @@
  */
 package BaiTap3;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  *
  * @author Admin
@@ -12,13 +16,22 @@ package BaiTap3;
 public class SinhVien 
 {
     private String hoTen;
-    private String ngaySinh; //Em chưa tim hiểu cách sử dụng Date
+    private Date ngaySinh;
     private float diemTB;
     
-    public SinhVien(String hoTen, String ngaySinh, float diemTB)
-    {
+    //Gọi hàm định dạng ngày tháng
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    
+    public SinhVien(String hoTen, String ngaysinh, float diemTB)
+    {   
+        //Chuyển đổi Date thành String
         this.hoTen = hoTen;
-        this.ngaySinh = ngaySinh;
+        Date birthday = null;
+        try{
+        birthday = sdf.parse(ngaysinh);}
+        catch (ParseException ex){}
+        
+        this.ngaySinh = birthday;
         this.diemTB = diemTB;
     }
 
@@ -30,11 +43,11 @@ public class SinhVien
         this.hoTen = hoTen;
     }
 
-    public String getNgaySinh() {
+    public Date getNgaySinh() {
         return ngaySinh;
     }
 
-    public void setNgaySinh(String ngaySinh) {
+    public void setNgaySinh(Date ngaySinh) {
         this.ngaySinh = ngaySinh;
     }
 
@@ -48,9 +61,13 @@ public class SinhVien
     
     @Override
     public String toString()
-    {
+    {   
+        //Chuyển đổi String thành Date
+        String ngaysinh;
+        ngaysinh = sdf.format(ngaySinh);
+        
         return "Họ Tên SV: " + hoTen + "\n" +
-                "Ngày Sinh: " + ngaySinh + "\n" +
+                "Ngày Sinh: " + ngaysinh + "\n" +
                 "Điểm Trung Bình: " + diemTB;
     }
 }
