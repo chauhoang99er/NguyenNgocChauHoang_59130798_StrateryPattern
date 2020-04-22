@@ -4,19 +4,17 @@
  * and open the template in the editor.
  */
 package BaiTap3;
-
+import java.util.Comparator;
 /**
  *
  * @author Admin
  */
-public class BaiTap3Main {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) 
+public class SoSanhTheoTen implements ISoSanh<SinhVien>
+{
+    @Override
+    public int soSanh(SinhVien o1, SinhVien o2) 
     {
-        // TODO code application logic here
+        return (o1.getHoTen().compareTo(o2.getHoTen()));
     }
     
 }

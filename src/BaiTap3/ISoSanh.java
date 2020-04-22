@@ -8,15 +8,9 @@ package BaiTap3;
 /**
  *
  * @author Admin
+ * @param <T>
  */
-public class BaiTap3Main {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) 
-    {
-        // TODO code application logic here
-    }
-    
+public interface ISoSanh<T>
+{
+    public int soSanh(T o1, T o2);
 }
